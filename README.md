@@ -1,14 +1,17 @@
 # Events API - Serverless FastAPI Backend
 
-A production-ready REST API for managing events, built with FastAPI and deployed as a serverless application on AWS.
+A production-ready REST API for managing events, built with FastAPI and deployed as a serverless application on AWS Lambda with DynamoDB.
 
-## 🚀 Quick Deploy
+## 🚀 Quick Start
 
 ```bash
+# Deploy to AWS (requires AWS CLI configured)
 ./deploy.sh
 ```
 
 Your API will be live in ~5 minutes with a public HTTPS endpoint!
+
+**First time?** See [QUICK_START.md](QUICK_START.md) for a 5-minute walkthrough.
 
 ## ✨ Features
 
@@ -137,6 +140,8 @@ Visit `https://YOUR-API-URL/prod/docs` for Swagger UI
 
 ## 💻 Local Development
 
+### Run Locally
+
 ```bash
 cd backend
 pip install -r requirements.txt
@@ -149,13 +154,27 @@ Access at http://localhost:8000
 
 ### Generate API Documentation
 
+The project includes auto-generated Python API documentation using pdoc:
+
 ```bash
 cd backend
-pip install -r requirements.txt
+./generate-docs.sh
+```
+
+Or manually:
+```bash
+cd backend
+pip install pdoc
 pdoc app -o docs
 ```
 
-This generates HTML documentation in `backend/docs/` from the Python docstrings.
+This generates comprehensive HTML documentation in `backend/docs/` from Python docstrings, including:
+- Module, class, and function documentation
+- Type annotations and signatures
+- Cross-referenced links between components
+- Search functionality
+
+Open `backend/docs/index.html` in your browser to view the documentation.
 
 ## 🔍 Monitoring
 
@@ -213,12 +232,19 @@ For production:
 
 ## 📚 Documentation
 
-- [Backend README](backend/README.md) - API details
-- [API Documentation](backend/docs/index.html) - Auto-generated API docs (pdoc)
-- [Infrastructure README](infrastructure/README.md) - CDK details
-- [Deployment Guide](DEPLOYMENT.md) - Step-by-step deployment
-- [Quick Start Guide](QUICK_START.md) - 5-minute setup
-- [Project Summary](PROJECT_SUMMARY.md) - Complete overview
+### Getting Started
+- [Quick Start Guide](QUICK_START.md) - 5-minute setup and deployment
+- [Deployment Guide](DEPLOYMENT.md) - Detailed deployment instructions
+- [Project Summary](PROJECT_SUMMARY.md) - Complete project overview
+
+### API Documentation
+- [Backend README](backend/README.md) - API details and usage
+- [Python API Docs](backend/docs/index.html) - Auto-generated from docstrings (pdoc)
+- Interactive Swagger UI - Available at `/docs` endpoint after deployment
+
+### Infrastructure
+- [Infrastructure README](infrastructure/README.md) - AWS CDK stack details
+- [Architecture Diagram](#-architecture) - See below
 
 ## 🛠️ Tech Stack
 

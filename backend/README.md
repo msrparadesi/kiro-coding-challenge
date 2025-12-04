@@ -286,6 +286,31 @@ Verify IAM permissions and table name in environment variables
 
 ## Documentation
 
-- Interactive API docs: `https://your-api-url/prod/docs`
+### Interactive API Documentation
+- Swagger UI: `https://your-api-url/prod/docs`
 - ReDoc: `https://your-api-url/prod/redoc`
 - OpenAPI spec: `https://your-api-url/prod/openapi.json`
+
+### Generated API Documentation
+
+Auto-generated Python API documentation is available in the `docs/` folder. This documentation is generated from the Python docstrings using pdoc.
+
+**View Documentation:**
+- Open `backend/docs/index.html` in your browser
+- Or view online if deployed to GitHub Pages
+
+**Generate Documentation:**
+```bash
+# Using the script
+./generate-docs.sh
+
+# Or manually
+pip install pdoc
+pdoc app -o docs
+```
+
+The generated documentation includes:
+- All modules, classes, and functions
+- Type annotations and signatures
+- Docstrings and usage examples
+- Cross-referenced links between components

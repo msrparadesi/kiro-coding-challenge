@@ -1,7 +1,15 @@
 #!/usr/bin/env node
-import 'source-map-support/register';
 import * as cdk from 'aws-cdk-lib';
 import { InfrastructureStack } from '../lib/infrastructure-stack';
 
 const app = new cdk.App();
-new InfrastructureStack(app, 'InfrastructureStack', {});
+
+new InfrastructureStack(app, 'InfrastructureStack', {
+  env: {
+    account: process.env.CDK_DEFAULT_ACCOUNT,
+    region: process.env.CDK_DEFAULT_REGION,
+  },
+  description: 'Events API - FastAPI backend with Lambda, API Gateway, and DynamoDB',
+});
+
+app.synth();

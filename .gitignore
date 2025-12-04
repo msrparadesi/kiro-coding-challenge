@@ -4,22 +4,34 @@ __pycache__/
 *$py.class
 *.so
 .Python
-env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environment
 venv/
 ENV/
+env/
 .venv
-*.egg-info/
-dist/
-build/
 
-# CDK
-infrastructure/cdk.out/
-infrastructure/.cdk.staging/
-*.js
-*.d.ts
-node_modules/
+# Environment variables
+.env
+.env.local
 
-# IDE
+# IDEs
 .vscode/
 .idea/
 *.swp
@@ -30,6 +42,25 @@ node_modules/
 .DS_Store
 Thumbs.db
 
-# Environment
-.env
-.env.local
+# CDK
+infrastructure/node_modules/
+infrastructure/cdk.out/
+infrastructure/*.js
+infrastructure/*.d.ts
+infrastructure/package-lock.json
+
+# Logs
+*.log
+logs/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# AWS
+.aws-sam/
+
+# Docker
+.dockerignore
